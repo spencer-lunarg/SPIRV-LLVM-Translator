@@ -151,6 +151,9 @@ if (NOT SPIRV_TOOLS_FOUND AND LLVM_SPIRV_ENABLE_LIBSPIRV_DIS)
           "--spirv-tools-dis support.")
 endif()
 
+if(MSVC)
+    add_compile_options(/MP)
+endif()
 
 add_subdirectory(lib/SPIRV)
 add_subdirectory(tools/llvm-spirv)
